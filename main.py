@@ -1,6 +1,10 @@
 from game.secret import generate_secret
 from game.validate import is_valid_guess
+from game.logic import score_guess
 
-print(generate_secret())
+secret = generate_secret()
+print(secret)
 guss = input("enter: ")
-is_valid_guess(guss)
+guss_cleane = "".join(guss.split())
+rezolt_bool = is_valid_guess(guss_cleane)
+score_guess(secret, guss)
